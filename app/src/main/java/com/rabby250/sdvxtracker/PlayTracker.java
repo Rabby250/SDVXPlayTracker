@@ -1,6 +1,7 @@
 package com.rabby250.sdvxtracker;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import com.rabby250.sdvxtracker.developer.LogActivity;
 
 public class PlayTracker extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -99,6 +101,10 @@ public class PlayTracker extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            // For development
+            final Intent intent = new Intent();
+            intent.setClass(getApplicationContext(), LogActivity.class);
+            startActivity(intent);
             return true;
         }
 
