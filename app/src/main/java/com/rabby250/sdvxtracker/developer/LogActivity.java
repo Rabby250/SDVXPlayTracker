@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import com.rabby250.sdvxtracker.R;
+import com.rabby250.sdvxtracker.content.MusicData;
+import com.rabby250.sdvxtracker.content.MusicList;
+
+import java.util.HashSet;
 
 public class LogActivity extends Activity {
 
@@ -112,6 +116,25 @@ public class LogActivity extends Activity {
     }
 
     private void fetchPlayData() {
+        for (int sortIndex = 1; sortIndex <= 10; sortIndex++) {
+            printLog("Fetching music list with sort index = "
+                    + sortIndex);
+            int pageCount = MusicList.countPages(sortIndex);
+            for (int pageIndex = 1; pageIndex <= pageCount; pageIndex++) {
+                printLog("\tFetching page " + pageIndex);
+                HashSet<MusicData> list = MusicList.parseMusicList(
+                        sortIndex, pageIndex);
+                for (MusicData data : list) {
+                    printLog("\t\tFound " + data.musicId);
+                    printLog("\t\t\tTitle: " + data.title);
+                }
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         /*
         try {
         } catch (IOException | InterruptedException e) {
