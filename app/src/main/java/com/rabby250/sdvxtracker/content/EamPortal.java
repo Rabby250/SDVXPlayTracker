@@ -11,10 +11,10 @@ import java.util.Map;
 
 public class EamPortal {
 
-    public static final String HOME_URL
-            = "https://p.eagate.573.jp/";
-    private static final String LOGIN_URL
-            = HOME_URL + "gate/p/login.html";
+    public static final String BASE_URL
+            = "https://p.eagate.573.jp";
+    public static final String LOGIN_URL
+            = BASE_URL + "/gate/p/login.html";
 
     private static final String CREDENTIAL_KONAMI_ID = "KID";
     private static final String CREDENTIAL_PASSWORD = "pass";

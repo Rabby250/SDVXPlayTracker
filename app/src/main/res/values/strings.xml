@@ -11,4 +11,6 @@
     <string name="action_example">Example action</string>
 
     <string name="action_settings">Settings</string>
+    <string name="action_login_eam">eAMUSEMENT Login</string>
+    <string name="title_activity_eam_login">eAMUSEMENT Login</string>
 </resources>

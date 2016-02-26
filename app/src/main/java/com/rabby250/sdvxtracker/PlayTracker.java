@@ -19,6 +19,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.rabby250.sdvxtracker.developer.LogActivity;
+import com.rabby250.sdvxtracker.ui.EamLoginActivity;
 
 public class PlayTracker extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -100,12 +101,19 @@ public class PlayTracker extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            // For development
-            final Intent intent = new Intent();
-            intent.setClass(getApplicationContext(), LogActivity.class);
-            startActivity(intent);
-            return true;
+        final Intent intent = new Intent();
+        switch (id) {
+            case R.id.action_settings:
+                // For development
+                intent.setClass(getApplicationContext(),
+                        LogActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.action_login_eam:
+                intent.setClass(getApplicationContext(),
+                        EamLoginActivity.class);
+                startActivity(intent);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

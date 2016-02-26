@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rabby250.sdvxtracker" >
+    package="com.rabby250.sdvxtracker">
 
     <!-- For connecting to eAmusement server -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -9,26 +9,28 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".PlayTracker"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".developer.LogActivity"
-            android:label="@string/app_name" >
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <service
             android:name=".sync.MusicDataDownloadService"
-            android:exported="false" >
-        </service>
+            android:exported="false"></service>
+
+        <activity
+            android:name=".ui.EamLoginActivity"
+            android:label="@string/title_activity_eam_login"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

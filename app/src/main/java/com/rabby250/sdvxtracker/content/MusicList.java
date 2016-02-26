@@ -16,7 +16,7 @@ import java.util.UUID;
 public class MusicList {
 
     private static final String BASE_URL
-            = SdvxPortal.RANKING_URL + "index.html";
+            = SdvxPortal.RANKING_URL + "/index.html";
     private static final String URL_DATA_PAGE = "page";
     private static final String URL_DATA_SORT = "sort";
 
